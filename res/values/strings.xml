@@ -3,6 +3,8 @@
 
     <string name="app_name">iTend</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
-
+    <string name="action_makedrink">Make a drink</string>
+	<string name="action_gethelp">Help</string>
+	<string name="icon">icon</string>
+	
 </resources>

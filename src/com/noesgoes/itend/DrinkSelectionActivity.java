@@ -55,17 +55,17 @@ public class DrinkSelectionActivity extends Activity {
 	}
 
 	public void onBeerClicked(View view) {
-		Intent intent = new Intent(getApplicationContext(), BeerSelectionActivity.class);
+		Intent intent = new Intent(this, BeerSelectionActivity.class);
 		startActivity(intent);
 	}
 	
 	public void onWineClicked(View view) {
-		Intent intent = new Intent(getApplicationContext(), WineSelectionActivity.class);
+		Intent intent = new Intent(this, WineSelectionActivity.class);
 		startActivity(intent);
 	}
 	
 	public void onMixedClicked(View view) {
-		Intent intent = new Intent(getApplicationContext(), MixedSelectionActivity.class);
+		Intent intent = new Intent(this, MixedSelectionActivity.class);
 		startActivity(intent);
 	}
 }

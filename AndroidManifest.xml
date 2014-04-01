@@ -22,6 +22,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.noesgoes.itend.DrinkSelectionActivity"
+            android:label="@string/title_activity_drink_selection"
+            android:parentActivityName="com.noesgoes.itend.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.noesgoes.itend.BeerSelectionActivity"
+            android:label="@string/title_activity_beer_selection"
+            android:parentActivityName="com.noesgoes.itend.DrinkSelectionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.DrinkSelectionActivity" />
+        </activity>
+        <activity
+            android:name="com.noesgoes.itend.WineSelectionActivity"
+            android:label="@string/title_activity_wine_selection"
+            android:parentActivityName="com.noesgoes.itend.DrinkSelectionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.DrinkSelectionActivity" />
+        </activity>
+        <activity
+            android:name="com.noesgoes.itend.MixedSelectionActivity"
+            android:label="@string/title_activity_mixed_selection"
+            android:parentActivityName="com.noesgoes.itend.DrinkSelectionActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.DrinkSelectionActivity" />
+        </activity>
     </application>
 
 </manifest>

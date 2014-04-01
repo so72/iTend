@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">iTend</string>
     <string name="action_settings">Settings</string>
     <string name="action_makedrink">Make a drink</string>
 	<string name="action_gethelp">Help</string>
 	<string name="icon">icon</string>
-	
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_drink_selection">Select Drink</string>
+    <string name="beer_button">Beer</string>
+    <string name="wine_button">Wine</string>
+    <string name="mixed_drink_button">Mixed Drink</string>
+    <string name="title_activity_beer_selection">BeerSelectionActivity</string>
+    <string name="title_activity_wine_selection">WineSelectionActivity</string>
+    <string name="title_activity_mixed_selection">MixedSelectionActivity</string>
 </resources>

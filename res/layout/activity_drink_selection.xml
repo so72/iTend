@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/beer_button" />
+        android:text="@string/beer_button"
+        android:onClick="onBeerClicked" />
 
     <Button
         android:id="@+id/button2"
@@ -22,7 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/button1"
         android:layout_below="@+id/button1"
-        android:text="@string/wine_button" />
+        android:text="@string/wine_button"
+        android:onClick="onWineClicked" />
 
     <Button
         android:id="@+id/button3"
@@ -30,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/button2"
         android:layout_below="@+id/button2"
-        android:text="@string/mixed_drink_button" />
+        android:text="@string/mixed_drink_button"
+        android:onClick="onMixedClicked" />
 
 </RelativeLayout>

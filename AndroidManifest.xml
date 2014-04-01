@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.noesgoes.itend.DrinkSelectionActivity"
+            android:label="@string/title_activity_drink_selection"
+            android:parentActivityName="com.noesgoes.itend.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

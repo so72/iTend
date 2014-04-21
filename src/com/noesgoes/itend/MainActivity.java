@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.drink_selection, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 
@@ -39,6 +39,10 @@ public class MainActivity extends Activity {
 			// http://developer.android.com/design/patterns/navigation.html#up-vs-back
 			//
 			NavUtils.navigateUpFromSameTask(this);
+			return true;
+		case R.id.action_admin:
+			Intent admin = new Intent(this, AddToMenuActivity.class);
+			startActivity(admin);
 			return true;
 		}
 		return super.onOptionsItemSelected(item);

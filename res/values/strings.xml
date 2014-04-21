@@ -16,5 +16,9 @@
     <string name="title_activity_wine_selection">WineSelectionActivity</string>
     <string name="title_activity_mixed_selection">MixedSelectionActivity</string>
     <string name="title_activity_add_to_menu">Add Drink to Menu</string>
+    <string name="drink_description">Description</string>
+    <string name="drink_name">Drink Name</string>
+    <string name="drink_cost">Cost</string>
+    <string name="add_drink">Add to Menu</string>
 
 </resources>

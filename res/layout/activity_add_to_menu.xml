@@ -1,7 +1,40 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.noesgoes.itend.AddToMenuActivity"
-    tools:ignore="MergeRootFrame" />
+    tools:ignore="MergeRootFrame" >
+    
+    <EditText android:id="@+id/drink_name"
+        android:inputType="text"
+        android:hint="@string/drink_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <EditText android:id="@+id/drink_description"
+        android:inputType="textMultiLine"
+        android:hint="@string/drink_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|left"
+        android:lines="8"
+        android:scrollbars="vertical" />
+    
+    <EditText android:id="@+id/drink_cost"
+        android:inputType="numberDecimal"
+        android:hint="@string/drink_cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <Spinner android:id="@+id/drink_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    
+    <Button android:id="@+id/add"
+        android:text="@string/add_drink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onAddToMenuClicked" />
+</LinearLayout>

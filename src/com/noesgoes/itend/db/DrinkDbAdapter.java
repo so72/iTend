@@ -60,7 +60,7 @@ public class DrinkDbAdapter {
 	 * 
 	 * @param context the context in which to create the DB
 	 */
-	DrinkDbAdapter(Context context) {
+	public DrinkDbAdapter(Context context) {
 		this.mContext = context;
 	}
 	

@@ -54,6 +54,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.noesgoes.itend.DrinkSelectionActivity" />
         </activity>
+        <activity
+            android:name="com.noesgoes.itend.AddToMenuActivity"
+            android:label="@string/title_activity_add_to_menu"
+            android:parentActivityName="com.noesgoes.itend.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

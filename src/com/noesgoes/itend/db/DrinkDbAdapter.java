@@ -106,8 +106,9 @@ public class DrinkDbAdapter {
 	 * @return cursor over all drinks of type type
 	 */
 	public Cursor getAllDrinks(int type) {
-		return mDb.query(DRINKS_TABLE, new String[] {KEY_ID, KEY_NAME,
-				KEY_DESCRIPTION, KEY_COST, KEY_TYPE}, KEY_TYPE, new String[] {type + ""}, null, null, null);
+		String[] args = { type + "" };
+		String[] columns = {KEY_ID, KEY_NAME, KEY_DESCRIPTION, KEY_COST, KEY_TYPE};
+		return mDb.query(DRINKS_TABLE, columns, "type=?", args, null, null, null);
 	}
 
 }

@@ -20,5 +20,6 @@
     <string name="drink_name">Drink Name</string>
     <string name="drink_cost">Cost</string>
     <string name="add_drink">Add to Menu</string>
-
+    <string name="no_beers">No beers added to system.</string>
+    
 </resources>

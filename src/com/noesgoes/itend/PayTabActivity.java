@@ -10,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
 
-public class PayTabActivity extends Activity {
+public class PayTabActivity extends ListActivity {
 
 	private OrderDbAdapter mDbHelper;
 	
@@ -18,11 +18,11 @@ public class PayTabActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_pay_tab);
-		
 		mDbHelper = new OrderDbAdapter(this);
         mDbHelper.open();
         fillData();
-        
+        registerForContextMenu(getListView());
+
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}

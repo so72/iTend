@@ -23,6 +23,7 @@
     <string name="drink_cost">Cost</string>
     <string name="add_drink">Add to Menu</string>
     <string name="no_beers">No beers added to system.</string>
+    <string name="no_drinks">No drinks on your tab.</string>
     <string name="helptext">Help for the iTend application. 
         First, you need to select "Make A Drink." From there, you can select what type of drink you want. 
         After you have chosen a drink, the cost will be placed into your tab. 

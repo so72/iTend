@@ -26,9 +26,11 @@ public class OrderDbAdapter {
 	public static final String KEY_COST = "cost";
 	
 	private static final String DB_CREATE =
-			"CREATE TABLE " + ORDER_TABLE + " (" + KEY_ID + " integer primary key autoincrement, "
+			"CREATE TABLE " + ORDER_TABLE 
+			+ " (" + KEY_ID + " integer primary key autoincrement, "
+			+ KEY_DRINK_NAME + " text not null, " 
 			+ KEY_DRINK_DESCRIPTION + " text not null, "
-			+ KEY_DRINK_NAME + " text not null, " + KEY_COST + " text not null);";
+			+ KEY_COST + " text not null);";
 	
 	private static class OrderDbHelper extends SQLiteOpenHelper {
 		
@@ -97,7 +99,7 @@ public class OrderDbAdapter {
 	 * @return cursor over all drinks of type type
 	 */
 	public Cursor getAllDrinks() {
-		String[] columns = {KEY_ID, KEY_DRINK_NAME, KEY_COST};
+		String[] columns = {KEY_DRINK_NAME, KEY_DRINK_DESCRIPTION, KEY_COST};
 		return mDb.query(ORDER_TABLE, columns, null, null, null, null, null);
 	}
 }

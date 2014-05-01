@@ -1,11 +1,13 @@
 package com.noesgoes.itend;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.app.ListActivity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -60,6 +62,9 @@ public class BeerSelectionActivity extends ListActivity {
 		OrderDbAdapter orderDbAdapter = new OrderDbAdapter(this);
 		orderDbAdapter.open();
 		orderDbAdapter.addDrinkToOrder(beerName, beerDescription, beerCost);
+		
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
 	}
 
 	/**

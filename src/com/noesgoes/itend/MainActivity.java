@@ -20,6 +20,16 @@ public class MainActivity extends Activity {
 		Intent selectDrink = new Intent(this, DrinkSelectionActivity.class);
 		startActivity(selectDrink);
 	}
+	
+	public void onPayTab(View view) {
+		Intent payTab = new Intent(this, PayTabActivity.class);
+		startActivity(payTab);
+	}
+	
+	public void onGetHelp(View view) {
+		Intent helpScreen = new Intent(this, GetHelpActivity.class);
+		startActivity(helpScreen);
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

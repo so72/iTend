@@ -31,6 +31,22 @@
                 android:value="com.noesgoes.itend.MainActivity" />
         </activity>
         <activity
+            android:name="com.noesgoes.itend.GetHelpActivity"
+            android:label="@string/title_activity_get_help"
+            android:parentActivityName="com.noesgoes.itend.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.noesgoes.itend.PayTabActivity"
+            android:label="@string/title_activity_pay_tab"
+            android:parentActivityName="com.noesgoes.itend.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.noesgoes.itend.MainActivity" />
+        </activity>
+        <activity
             android:name="com.noesgoes.itend.BeerSelectionActivity"
             android:label="@string/title_activity_beer_selection"
             android:parentActivityName="com.noesgoes.itend.DrinkSelectionActivity" >

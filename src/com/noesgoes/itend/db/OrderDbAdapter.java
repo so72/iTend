@@ -22,10 +22,12 @@ public class OrderDbAdapter {
 	
 	public static final String KEY_ID = "_id";
 	public static final String KEY_DRINK_NAME = "drink_name";
+	public static final String KEY_DRINK_DESCRIPTION = "drink_description";
 	public static final String KEY_COST = "cost";
 	
 	private static final String DB_CREATE =
 			"CREATE TABLE " + ORDER_TABLE + " (" + KEY_ID + " integer primary key autoincrement, "
+			+ KEY_DRINK_DESCRIPTION + " text not null, "
 			+ KEY_DRINK_NAME + " text not null, " + KEY_COST + " text not null);";
 	
 	private static class OrderDbHelper extends SQLiteOpenHelper {
@@ -78,10 +80,11 @@ public class OrderDbAdapter {
 	 * @param cost the cost of the drink
 	 * @return the ID or -1 if the insert failed
 	 */
-	public long addDrinkToOrder(String name, String cost) {
+	public long addDrinkToOrder(String name, String description, String cost) {
 		ContentValues initialValues = new ContentValues();
 		
 		initialValues.put(KEY_DRINK_NAME, name);
+		initialValues.put(KEY_DRINK_DESCRIPTION, description);
 		initialValues.put(KEY_COST, cost);
 
 		return mDb.insert(ORDER_TABLE, null, initialValues);

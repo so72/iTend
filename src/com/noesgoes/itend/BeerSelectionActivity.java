@@ -55,10 +55,11 @@ public class BeerSelectionActivity extends ListActivity {
 		
 		String beerName = beerCursor.getString(beerCursor.getColumnIndex("name"));
 		String beerCost = beerCursor.getString(beerCursor.getColumnIndex("cost"));
+		String beerDescription = beerCursor.getString(beerCursor.getColumnIndex("description"));
 
 		OrderDbAdapter orderDbAdapter = new OrderDbAdapter(this);
 		orderDbAdapter.open();
-		orderDbAdapter.addDrinkToOrder(beerName, beerCost);
+		orderDbAdapter.addDrinkToOrder(beerName, beerDescription, beerCost);
 	}
 
 	/**

@@ -113,7 +113,7 @@ public class DrinkDbAdapter {
 	
 	public Cursor getDrinkByID(long id) {
 		String[] args = {id + ""};
-		String[] columns = {KEY_NAME, KEY_COST};
+		String[] columns = {KEY_NAME, KEY_DESCRIPTION, KEY_COST};
 		Cursor cursor = mDb.query(DRINKS_TABLE, columns, KEY_ID + "=?", args, null, null, null);
 		cursor.moveToFirst();
 		return cursor;

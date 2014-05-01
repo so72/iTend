@@ -54,10 +54,11 @@ public class MixedSelectionActivity extends ListActivity {
 		
 		String drinkName = drinkCursor.getString(drinkCursor.getColumnIndex("name"));
 		String drinkCost = drinkCursor.getString(drinkCursor.getColumnIndex("cost"));
+		String drinkDescription = drinkCursor.getString(drinkCursor.getColumnIndex("description"));
 
 		OrderDbAdapter orderDbAdapter = new OrderDbAdapter(this);
 		orderDbAdapter.open();
-		orderDbAdapter.addDrinkToOrder(drinkName, drinkCost);
+		orderDbAdapter.addDrinkToOrder(drinkName, drinkDescription, drinkCost);
 	}
     
 	/**

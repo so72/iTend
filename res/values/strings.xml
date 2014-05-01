@@ -16,10 +16,15 @@
     <string name="title_activity_wine_selection">WineSelectionActivity</string>
     <string name="title_activity_mixed_selection">MixedSelectionActivity</string>
     <string name="title_activity_add_to_menu">Add Drink to Menu</string>
+   	<string name="title_activity_pay_tab">Pay Tab</string>
+    <string name="title_activity_get_help">Help</string>
     <string name="drink_description">Description</string>
     <string name="drink_name">Drink Name</string>
     <string name="drink_cost">Cost</string>
     <string name="add_drink">Add to Menu</string>
     <string name="no_beers">No beers added to system.</string>
-    
+    <string name="helptext">Help for the iTend application. 
+        First, you need to select "Make A Drink." From there, you can select what type of drink you want. 
+        After you have chosen a drink, the cost will be placed into your tab. 
+        When you are done buying and drinking, you can select "Close Tab" to pay for your drinks.</string>
 </resources>

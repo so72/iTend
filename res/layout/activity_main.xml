@@ -35,13 +35,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/action_pay"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:onClick="onPayTab" />
 
     <Button
         android:id="@+id/help"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/action_gethelp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:onClick="onGetHelp" />
 
 </LinearLayout>

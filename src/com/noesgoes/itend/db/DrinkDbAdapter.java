@@ -108,7 +108,15 @@ public class DrinkDbAdapter {
 	public Cursor getAllDrinks(int type) {
 		String[] args = { type + "" };
 		String[] columns = {KEY_ID, KEY_NAME, KEY_DESCRIPTION, KEY_COST, KEY_TYPE};
-		return mDb.query(DRINKS_TABLE, columns, "type=?", args, null, null, null);
+		return mDb.query(DRINKS_TABLE, columns, KEY_TYPE + "=?", args, null, null, null);
+	}
+	
+	public Cursor getDrinkByID(long id) {
+		String[] args = {id + ""};
+		String[] columns = {KEY_NAME, KEY_COST};
+		Cursor cursor = mDb.query(DRINKS_TABLE, columns, KEY_ID + "=?", args, null, null, null);
+		cursor.moveToFirst();
+		return cursor;
 	}
 
 }

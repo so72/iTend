@@ -1,13 +1,16 @@
 package com.noesgoes.itend;
 
-import com.noesgoes.itend.db.DrinkDbAdapter;
-
 import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
+import com.noesgoes.itend.db.DrinkDbAdapter;
+import com.noesgoes.itend.db.OrderDbAdapter;
 
 public class WineSelectionActivity extends ListActivity {
 
@@ -41,6 +44,19 @@ public class WineSelectionActivity extends ListActivity {
             new SimpleCursorAdapter(this, R.layout.drink_row, notesCursor, from, to);
         setListAdapter(beers);
     }
+    
+    @Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		
+		Cursor wineCursor = mDbHelper.getDrinkByID(id);
+		startManagingCursor(wineCursor);
+		
+		OrderDbAdapter orderDbAdapter = new OrderDbAdapter(this);
+		String beerName = wineCursor.getString(wineCursor.getColumnIndexOrThrow(DrinkDbAdapter.KEY_NAME));
+		String beerCost = wineCursor.getString(wineCursor.getColumnIndexOrThrow(DrinkDbAdapter.KEY_COST));
+		orderDbAdapter.addDrinkToOrder(beerName, beerCost);
+	}
     
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.

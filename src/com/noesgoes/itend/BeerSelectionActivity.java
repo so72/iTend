@@ -1,13 +1,17 @@
 package com.noesgoes.itend;
 
-import com.noesgoes.itend.db.DrinkDbAdapter;
-
 import android.annotation.TargetApi;
 import android.app.ListActivity;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
+import com.noesgoes.itend.db.DrinkDbAdapter;
+import com.noesgoes.itend.db.OrderDbAdapter;
 
 public class BeerSelectionActivity extends ListActivity {
 
@@ -27,8 +31,8 @@ public class BeerSelectionActivity extends ListActivity {
 	}
 	
     private void fillData() {
-        Cursor notesCursor = mDbHelper.getAllDrinks(0);
-        startManagingCursor(notesCursor);
+        Cursor beerCursor = mDbHelper.getAllDrinks(0);
+        startManagingCursor(beerCursor);
 
         // Create an array to specify the fields we want to display in the list (only TITLE)
         String[] from = new String[]{DrinkDbAdapter.KEY_NAME, DrinkDbAdapter.KEY_DESCRIPTION};
@@ -38,10 +42,25 @@ public class BeerSelectionActivity extends ListActivity {
 
         // Now create a simple cursor adapter and set it to display
         SimpleCursorAdapter beers = 
-            new SimpleCursorAdapter(this, R.layout.drink_row, notesCursor, from, to);
+            new SimpleCursorAdapter(this, R.layout.drink_row, beerCursor, from, to);
         setListAdapter(beers);
     }
     
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		
+		Cursor beerCursor = mDbHelper.getDrinkByID(id);
+		startManagingCursor(beerCursor);
+		
+		String beerName = beerCursor.getString(beerCursor.getColumnIndex("name"));
+		String beerCost = beerCursor.getString(beerCursor.getColumnIndex("cost"));
+
+		OrderDbAdapter orderDbAdapter = new OrderDbAdapter(this);
+		orderDbAdapter.open();
+		orderDbAdapter.addDrinkToOrder(beerName, beerCost);
+	}
+
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */

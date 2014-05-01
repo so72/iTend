@@ -1,13 +1,12 @@
 package com.noesgoes.itend.db;
 
-import java.math.BigDecimal;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 public class OrderDbAdapter {
 	private static final String TAG = "OrderDbAdapter";
@@ -18,7 +17,7 @@ public class OrderDbAdapter {
 	private final Context mContext;
 
 	private static final String DB_NAME = "orderdata";
-	private static final String ORDER_TABLE = "order";
+	private static final String ORDER_TABLE = "orders";
 	private static final int DB_VERSION = 2;
 	
 	public static final String KEY_ID = "_id";
@@ -27,7 +26,7 @@ public class OrderDbAdapter {
 	
 	private static final String DB_CREATE =
 			"CREATE TABLE " + ORDER_TABLE + " (" + KEY_ID + " integer primary key autoincrement, "
-			+ KEY_DRINK_NAME + " text not null, " + KEY_COST + " text not null;";
+			+ KEY_DRINK_NAME + " text not null, " + KEY_COST + " text not null);";
 	
 	private static class OrderDbHelper extends SQLiteOpenHelper {
 		
@@ -79,12 +78,12 @@ public class OrderDbAdapter {
 	 * @param cost the cost of the drink
 	 * @return the ID or -1 if the insert failed
 	 */
-	public long addDrinkToOrder(String name, BigDecimal cost, int type) {
+	public long addDrinkToOrder(String name, String cost) {
 		ContentValues initialValues = new ContentValues();
 		
 		initialValues.put(KEY_DRINK_NAME, name);
-		initialValues.put(KEY_COST, cost.toPlainString());
-		
+		initialValues.put(KEY_COST, cost);
+
 		return mDb.insert(ORDER_TABLE, null, initialValues);
 	}
 	

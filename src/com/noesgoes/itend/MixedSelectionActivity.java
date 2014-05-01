@@ -49,13 +49,15 @@ public class MixedSelectionActivity extends ListActivity {
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
 		
-		Cursor mixedCursor = mDbHelper.getDrinkByID(id);
-		startManagingCursor(mixedCursor);
+		Cursor drinkCursor = mDbHelper.getDrinkByID(id);
+		startManagingCursor(drinkCursor);
 		
+		String drinkName = drinkCursor.getString(drinkCursor.getColumnIndex("name"));
+		String drinkCost = drinkCursor.getString(drinkCursor.getColumnIndex("cost"));
+
 		OrderDbAdapter orderDbAdapter = new OrderDbAdapter(this);
-		String beerName = mixedCursor.getString(mixedCursor.getColumnIndexOrThrow(DrinkDbAdapter.KEY_NAME));
-		String beerCost = mixedCursor.getString(mixedCursor.getColumnIndexOrThrow(DrinkDbAdapter.KEY_COST));
-		orderDbAdapter.addDrinkToOrder(beerName, beerCost);
+		orderDbAdapter.open();
+		orderDbAdapter.addDrinkToOrder(drinkName, drinkCost);
 	}
     
 	/**

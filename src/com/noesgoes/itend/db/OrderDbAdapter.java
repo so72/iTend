@@ -99,7 +99,7 @@ public class OrderDbAdapter {
 	 * @return cursor over all drinks of type type
 	 */
 	public Cursor getAllDrinks() {
-		String[] columns = {KEY_DRINK_NAME, KEY_DRINK_DESCRIPTION, KEY_COST};
+		String[] columns = {KEY_ID, KEY_DRINK_NAME, KEY_DRINK_DESCRIPTION, KEY_COST};
 		return mDb.query(ORDER_TABLE, columns, null, null, null, null, null);
 	}
 }

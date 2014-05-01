@@ -24,9 +24,11 @@
 	</LinearLayout>
 	<TextView
 	    android:layout_gravity="center"
+	    android:padding="10dp"
+	    android:gravity="right"
 	    android:id="@+id/text3"
 	    android:textSize="24sp"
-	    android:textColor="#F00"
+	    android:textColor="#0C0"
 	    android:layout_weight="1"
 	    android:layout_width="0px"
 	    android:layout_height="wrap_content" />

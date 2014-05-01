@@ -20,7 +20,7 @@ public class MixedSelectionActivity extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_beer_selection);
+		setContentView(R.layout.activity_mixed_selection);
 		mDbHelper = new DrinkDbAdapter(this);
         mDbHelper.open();
         fillData();

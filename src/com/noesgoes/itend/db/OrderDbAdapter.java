@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-import android.widget.TextView;
 
 public class OrderDbAdapter {
 	private static final String TAG = "OrderDbAdapter";
@@ -110,5 +108,8 @@ public class OrderDbAdapter {
 		double cnt = cursor.getDouble(0);
 		cursor.close();
 		return cnt;
+	}
+	public void clearAllDrinks() {
+		mDb.delete(ORDER_TABLE, null, null);
 	}
 }

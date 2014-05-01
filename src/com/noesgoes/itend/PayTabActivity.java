@@ -1,14 +1,14 @@
 package com.noesgoes.itend;
 
-import com.noesgoes.itend.db.DrinkDbAdapter;
 import com.noesgoes.itend.db.OrderDbAdapter;
 
 import android.app.ListActivity;
 import android.annotation.TargetApi;
-import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
@@ -24,7 +24,6 @@ public class PayTabActivity extends ListActivity {
         mDbHelper.open();
         fillData();
         registerForContextMenu(getListView());
-
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -32,6 +31,8 @@ public class PayTabActivity extends ListActivity {
     private void fillData() {
         Cursor drinkCursor = mDbHelper.getAllDrinks();
         double drinkTotal = mDbHelper.getTabTotal();
+        String textTotal = Double.toString(drinkTotal);
+
         startManagingCursor(drinkCursor);
 
         // Create an array to specify the fields we want to display in the list (only TITLE)
@@ -45,8 +46,13 @@ public class PayTabActivity extends ListActivity {
             new SimpleCursorAdapter(this, R.layout.drink_row, drinkCursor, from, to);
         setListAdapter(drinks);
         TextView total = (TextView) findViewById(R.id.total);
+        total.setText(textTotal);
     }
-    
+	
+	public void onTabClicked(View view) {
+    	mDbHelper.clearAllDrinks();
+    	fillData();
+    }
 	/**
 	 * Set up the {@link android.app.ActionBar}, if the API is available.
 	 */

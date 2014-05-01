@@ -3,7 +3,6 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
    	android:layout_height="wrap_content">
-    
     <ListView android:id="@+id/android:list"
         android:layout_width="match_parent"
        	android:layout_height="wrap_content"/>
@@ -12,9 +11,32 @@
         android:layout_width="match_parent"
        	android:layout_height="wrap_content"
        	android:text="@string/no_drinks"/>
-  	<TextView android:id="@+id/total"
-    	android:padding="10dp"
-        android:layout_width="match_parent"
-       	android:layout_height="wrap_content"
-       	android:text="@string/no_drinks"/>
+  	<LinearLayout
+    	android:layout_width="match_parent" 
+    	android:layout_height="wrap_content"
+    	android:paddingTop="20dp">
+	    <TextView android:id="@+id/totallabel"
+	        android:layout_width="wrap_content"
+	        android:layout_weight=".5"
+	  		android:layout_height="wrap_content"
+	       	android:textSize="24sp"
+	        android:gravity="left"
+	       	android:text="@string/totallabel"
+	       	android:paddingLeft="10dp"/>
+	  	<TextView android:id="@+id/total"
+	  		android:layout_width="wrap_content"
+	  		android:layout_weight=".5"
+	  		android:layout_height="wrap_content"
+	  	    android:gravity="right"
+	       	android:textSize="24sp"
+		    android:textColor="#F00"
+		    android:paddingRight="10dp"/>
+	</LinearLayout>
+    <Button
+	    android:id="@+id/paybutton"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/pay_button"
+	    android:textColor="#FFFFFF"
+	    android:onClick="onTabClicked"/>
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.noesgoes.itend.db;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -93,7 +94,7 @@ public class DrinkDbAdapter {
 		
 		initialValues.put(KEY_NAME, name);
 		initialValues.put(KEY_DESCRIPTION, description);
-		initialValues.put(KEY_COST, cost.toPlainString());
+		initialValues.put(KEY_COST, cost.setScale(2, RoundingMode.CEILING).toPlainString());
 		initialValues.put(KEY_TYPE, type);
 		
 		return mDb.insert(DRINKS_TABLE, null, initialValues);

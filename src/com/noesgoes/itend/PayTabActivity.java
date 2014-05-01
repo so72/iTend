@@ -2,6 +2,7 @@ package com.noesgoes.itend;
 
 import com.noesgoes.itend.db.DrinkDbAdapter;
 import com.noesgoes.itend.db.OrderDbAdapter;
+
 import android.app.ListActivity;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -9,6 +10,7 @@ import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class PayTabActivity extends ListActivity {
 
@@ -29,6 +31,7 @@ public class PayTabActivity extends ListActivity {
 	
     private void fillData() {
         Cursor drinkCursor = mDbHelper.getAllDrinks();
+        double drinkTotal = mDbHelper.getTabTotal();
         startManagingCursor(drinkCursor);
 
         // Create an array to specify the fields we want to display in the list (only TITLE)
@@ -41,6 +44,7 @@ public class PayTabActivity extends ListActivity {
         SimpleCursorAdapter drinks = 
             new SimpleCursorAdapter(this, R.layout.drink_row, drinkCursor, from, to);
         setListAdapter(drinks);
+        TextView total = (TextView) findViewById(R.id.total);
     }
     
 	/**

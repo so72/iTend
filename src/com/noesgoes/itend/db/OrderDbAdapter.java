@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.TextView;
 
 public class OrderDbAdapter {
 	private static final String TAG = "OrderDbAdapter";
@@ -101,5 +102,13 @@ public class OrderDbAdapter {
 	public Cursor getAllDrinks() {
 		String[] columns = {KEY_ID, KEY_DRINK_NAME, KEY_DRINK_DESCRIPTION, KEY_COST};
 		return mDb.query(ORDER_TABLE, columns, null, null, null, null, null);
+	}
+	
+	public double getTabTotal() {
+		Cursor cursor = mDb.rawQuery("SELECT SUM("+KEY_COST+") FROM " + ORDER_TABLE, null);
+		cursor.moveToFirst();
+		double cnt = cursor.getDouble(0);
+		cursor.close();
+		return cnt;
 	}
 }
